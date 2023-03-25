@@ -51,6 +51,25 @@ services:
       - POSTGRES_PASSWORD=pass
 
 
+  worker2:
+    build:
+      context:.
+    hostname: worker2
+    entrypoint: celery
+    command: -A celery_app.app worker --loglevel=info
+    volumes:
+      - ./service:/service
+    links:
+      -  redis
+    depends_on:
+      -  redis
+      -  database
+    environment:
+      - POSTGRES_DB=dbname
+      - POSTGRES_USER=dbuser
+      - POSTGRES_PASSWORD=pass
+
+
 
   flower:
     build:
