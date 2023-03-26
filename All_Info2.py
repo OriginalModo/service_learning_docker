@@ -168,5 +168,39 @@ https://django-taggit.readthedocs.io/en/latest/getting_started.html
 Celery
 https://docs.celeryq.dev/en/stable/
 pip install celery
-"""
 
+Если такая ошибка
+TemplateDoesNotExist at /api/subscribtions/ # TemplateDoesNotExist at /api/subscribtions/?format=json
+чтобы получить не веб страницу а json
+
+Для удобного просмотра JSON d браузере:
+JSON Viewer
+
+CELERY
+from celery_singleton Singleton # создание класса в одном екземпляре второй екземпляр создаватся не может
+если приходит таска с такими же аргументами то её не обрабатывает
+
+transaction - все действия внутри неё выполняются атомарно(или все выйдет или не выйдет все)
+атомарно - не может быть применено частично только всё вместе
+
+Redis
+хранилище (база данных) ключ значение
+которое живет в оперативной памяти и доступ к данным происходит быстрее
+
+Postgresql
+живет на диске
+
+
+Django Cache
+https://docs.djangoproject.com/en/4.1/topics/cache/
+
+
+
+библиотеки кэширования
+https://djangopackages.org/grids/g/caching/
+https://djangopackages.org # вся инфа
+
+django-cachalot
+https://django-cachalot.readthedocs.io/en/latest/
+
+"""
